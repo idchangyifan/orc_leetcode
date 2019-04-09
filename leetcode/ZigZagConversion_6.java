@@ -41,20 +41,25 @@ public class ZigZagConversion_6 {
         if (len <= numRows || numRows == 1) {
             return s;
         }
+        //list中每个元素代表一行
         List<StringBuilder> list = new ArrayList<>();
         for (int i = 0; i < numRows; i++) {
             StringBuilder sb = new StringBuilder();
             list.add(sb);
         }
+        //初始化当前行为第一行
         int currentRow = 1;
         boolean flag = true;
         for (int i = 0; i < len; i++) {
+            //当前行为首行或者末行的时候，加减规则要反转
             if (currentRow == numRows) {
                 flag = false;
             } else if (currentRow == 1) {
                 flag = true;
             }
+            //将s中的当前字母添加到其对应的当前行
             list.get(currentRow - 1).append(s.charAt(i));
+            //根据flag决定下一个当前行应该是加或者减
             if (flag) {
                 currentRow++;
             } else {
