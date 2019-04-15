@@ -21,9 +21,9 @@ import java.util.Stack;
  * Output: false
  * Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
  *
- * 方法一：转换为string，然后压栈处理。缺点：浪费空间。
+ * 方法一：转换为string，然后压栈处理。缺点：浪费空间，也不是很快。faster than 82%
  *
- * 方法二：标答做法，利用int整型的特点。将这个整数后半截儿revert一下，然后跟前半截儿比较==。
+ * 方法二：标答做法，利用int整型的特点。将这个整数后半截儿revert一下，然后跟前半截儿比较==,faster than 100%
  */
 public class PalindromeNumber_9 {
     public  boolean isPalindrome(int x) {
